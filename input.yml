@@ -1,0 +1,189 @@
+logJsonDataConfig: &logJsonDataConfig
+  code: logJsonData
+  path: /logs/
+  ext: .json
+queueJsonDataConfig: &queueJsonDataConfig
+  code: queueJsonData
+  path: /queue/
+  ext: .json
+gatewayGrpcConfig: &gatewayGrpcConfig
+  code: gatewayGrpc
+  driverName: tcp
+  urlAddress: 0.0.0.0:5051
+excelGrpcConfig: &excelGrpcConfig
+  code: excelGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5052
+adGrpcConfig: &adGrpcConfig
+  code: adGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5053
+restfulWebServiceGrpcConfig: &restfulWebServiceGrpcConfig
+  code: restfulWebServiceGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5054
+databaseGrpcConfig: &databaseGrpcConfig
+  code: databaseGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5055
+serviceDeskPlusGrpcConfig: &serviceDeskPlusGrpcConfig
+  code: serviceDeskPlusGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5056
+recordingAgentGrpcConfig: &recordingAgentGrpcConfig
+  code: recordingAgentGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5057
+fileAndFolderGrpcConfig: &fileAndFolderGrpcConfig
+  code: fileAndFolderGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5058
+pdfGrpcConfig: &pdfGrpcConfig
+  code: pdfGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5059
+ocrGrpcConfig: &ocrGrpcConfig
+  code: ocrGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5060
+ewsGrpcConfig: &ewsGrpcConfig
+  code: ewsGrpc
+  driverName: tcp
+  urlAddress: 127.0.0.1:5061
+zapConfig: &zapConfig
+  code: zap
+  level: debug
+  enableCaller: true
+logrusConfig: &logrusConfig
+  code: logrus
+  level: debug
+  enableCaller: false
+logConfig: *zapConfig
+excelMicroserviceConfig: &excelMicroserviceConfig
+  code: excelMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+activeDirectoryMicroserviceConfig: &activeDirectoryMicroserviceConfig
+  code: activeDirectoryMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+restfulWebServiceMicroserviceConfig: &restfulWebServiceMicroserviceConfig
+  code: restfulWebServiceMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+recordingAgentMicroserviceConfig: &recordingAgentMicroserviceConfig
+  code: recordingAgentMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+databaseMicroserviceConfig: &databaseMicroserviceConfig
+  code: databaseMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+serviceDeskPlusMicroserviceConfig: &serviceDeskPlusMicroserviceConfig
+  code: serviceDeskPlusMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+fileAndFolderMicroserviceConfig: &fileAndFolderMicroserviceConfig
+  code: fileAndFolderMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+pdfMicroserviceConfig: &pdfMicroserviceConfig
+  code: pdfMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+ocrMicroserviceConfig: &ocrMicroserviceConfig
+  code: ocrMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+ewsMicroserviceConfig: &ewsMicroserviceConfig
+  code: ewsMicroservice
+  logDataConfig: &logDataConfig
+    code: logData
+    dataStoreConfig: *logJsonDataConfig
+useCaseConfig:
+  logJson:
+    code: logJson
+  queue:
+    code: queue
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *queueJsonDataConfig
+  excel:
+    code: excel
+    microserviceConfig: *excelMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  activeDirectory:
+    code: activeDirectory
+    microserviceConfig: *activeDirectoryMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  restfulWebService:
+    code: restfulWebService
+    microserviceConfig: *restfulWebServiceMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  database:
+    code: database
+    microserviceConfig: *databaseMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  serviceDeskPlus:
+    code: serviceDeskPlus
+    microserviceConfig: *serviceDeskPlusMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  recordingAgent:
+    code: recordingAgent
+    microserviceConfig: *recordingAgentMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStroreConfig: *logJsonDataConfig
+  fileAndFolder:
+    code: fileAndFolder
+    microserviceConfig: *fileAndFolderMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  pdf:
+    code: pdf
+    microserviceConfig: *pdfMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  ocr:
+    code: ocr
+    microserviceConfig: *ocrMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  ews:
+    code: ews
+    microserviceConfig: *ewsMicroserviceConfig
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  loop:
+    code: loop
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
+  ifelse:
+    code: ifElse
+    logDataConfig: &logDataConfig
+      code: logData
+      dataStoreConfig: *logJsonDataConfig
